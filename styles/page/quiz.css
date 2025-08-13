@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nata Sans", sans-serif;
+  margin: 0;
+  padding-top: 68px; /* space for fixed header */
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: white;
+  z-index: 10;
+  height: 68px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  margin-left: 50px;
+}
+
+
+
+/* Make container fill full screen under the header */
+.container {
+  background-color: rgb(136, 67, 136);
+  position: absolute;
+  width: 100%;
+  min-height: calc(100vh - 68px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.box-container {
+  background-color: #f0eef5;
+  padding: 80px 50px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0px 3px 3px 2px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.getstarted-text {
+  color: rgb(136, 67, 136);
+  margin-bottom: 25px;
+}
+
+.start-button {
+  background-color:  #f0eef5;
+  color: rgb(136, 67, 136);
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  width: 150px;
+}
+
+.start-button:hover {
+  background-color: #e5d0ec;
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+.answer-button{
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 12px 20px;
+  background-color: white;
+  color: rgb(136, 67, 136);
+  border: 2px solid rgb(136, 67, 136);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.answer-button:hover {
+  background-color: #e5d0ec;
+  transform: scale(1.03);
+}
+
+.answer-button:disabled {
+  background-color: #eee;
+  color: #999;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
+
+.correct {
+  background-color: #d1f2e0;               /* Light green */
+  border-color: #28a745;                   /* Green border */
+  color: #155724;                          /* Dark green text */
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.4);
+  position: relative;
+  padding: 5px;
+}
+
+.correct::after {
+  content: '✔';
+  position: absolute;
+  right: 20px;
+  font-size: 18px;
+  color: #28a745;
+}
+
+.wrong {
+  background-color: #f8d7da;               /* Light red */
+  border-color: #dc3545;                   /* Red border */
+  color: #721c24;                          /* Dark red text */
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.4);
+  position: relative;
+  padding: 5px;
+}
+
+.wrong::after {
+  content: '✖';
+  position: absolute;
+  right: 20px;
+  font-size: 18px;
+  color: #dc3545;
+}
+
+.next-button {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 12px 20px;
+  background-color: white;
+  color: rgb(136, 67, 136);
+  border: 2px solid rgb(136, 67, 136);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.next-button:hover {
+  background-color: #e5d0ec;
+  transform: scale(1.03);
+}
+
+.number-page{
+  position: relative;
+  top: -45px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.question-text{
+  font-weight: 600;
+  font-size: 18px;
+  position: relative;
+  top: -15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: inherit;      /* makes link text take color from parent */
+  text-decoration: none; /* removes underline */
+  cursor: pointer;     /* makes it clear it's clickable */
+}
